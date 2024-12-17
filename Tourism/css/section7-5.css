@@ -1,0 +1,511 @@
+#container2 .box {
+  position: relative;
+  justify-content: center; /* 水平居中 */
+  background-color: #FCF9F9;
+}
+
+.three .next{
+  /* border: #c74343 2px solid; */
+  position: absolute;
+  margin-bottom: 0px;
+  width: auto;
+  bottom: 4px;
+  right: 8px;
+  z-index: 20;
+}
+
+/* 互動對話動畫------------------------ */
+.dia .item2 img {
+  animation: dialog 0.2s linear infinite;
+  animation-direction: alternate;
+  animation-play-state: running; /* 預設動畫在運行 */
+}
+@keyframes dialog {
+  0% {
+    transform: rotate(-0.3deg);
+  }
+  100% {
+    transform: rotate(0.3deg);
+  }
+}
+
+/* 文字---------------------------- */
+h1 {
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 1.8;
+  letter-spacing: 5px;
+  color: #BC3E1E;
+  z-index: 3;
+}
+.one h1 {
+  position: absolute;
+  letter-spacing: 20px;
+  width: 80%;
+  opacity: 0.8;
+  color: #FCF9F9;
+}
+h2 {
+  font-size: 18px;
+  letter-spacing: 4px;
+  box-sizing: border-box;
+  color: #BC3E1E;
+}
+h3 {
+  font-size: 14px;
+  letter-spacing: 4px;
+  box-sizing: border-box;
+  color: #BC3E1E;
+  /* border: #db9fc9 2px solid; */
+  margin-bottom: 4%;
+}
+#container .box p {
+  /* margin-left: 4%; */
+  font-size: 14px;
+  color: #45362E;
+  letter-spacing: 2.4px;
+  line-height: 1.8;
+  box-sizing: border-box;
+  z-index: 2;
+  /* border: #ff81d1 2px solid; */
+}
+br {
+  line-height: 0.8;
+}
+/* (one的小白字) */
+#container2 .box .white {
+  position: absolute;
+  color: #FCF9F9;
+  /* border: #deff91 1px solid; */
+  top: 80%;
+  left: 12%;
+  right: 12%;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+/* img------------------------------------------- */
+.one img {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.5);
+  /* border: #BC3E1E 2px solid; */
+}
+
+.one::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+  /* 如果需要不同方向的渐层，可以调整渐层方向，例如：to right, to left */
+}
+
+/* game############################ */
+.game h1 {
+  color: #FCF9F9;
+  text-align: center;
+}
+.game {
+  position: relative;
+  /* border: #96d600 2px solid; */
+  z-index: 10;
+}
+.game-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 8px;
+  /* border: #392b25 2px solid; */
+}
+
+.draggable {
+  cursor: grab;
+}
+
+.dropzone {
+  border: 1.5px dashed #f4eeda;
+  padding: 8px;
+  width: 200px;
+  height: 240px;
+  position: relative;
+  margin-bottom: 8%;
+}
+
+.dropzone img {
+  display: block;
+  margin: 0 auto;
+  height: 80%;
+  object-fit: contain;
+}
+
+.box .dropzone p {
+  color: #f4eeda !important;
+  margin: 4px 0px;
+  text-align: center;
+  /* border: #f4eeda 1.5px solid; */
+}
+
+#sushi {
+  transition: transform 0.5s ease-in-out;
+}
+
+#customer img.happy {
+  animation: happy-eating 1s infinite;
+}
+
+@keyframes happy-eating {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 電腦版!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+@media screen and (min-width: 768px) {
+
+  /* 橫向排版------------------------- */
+  ::-webkit-scrollbar {
+    width: 1px;
+    height: 1px;
+  }
+
+  ::-webkit-scrollbar-button {
+    width: 1px;
+    height: 1px;
+  }
+
+  body {
+    margin: 0;
+  }
+  /* 藍 */
+  #container {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    transform: rotate(270deg) translateX(-100%);
+    transform-origin: top left;
+    /* background-color: #a9b; */
+    position: absolute;
+    top: 60px;
+    width: calc(100vh - 60px);
+    height: 100vw;
+    /* border: #9df 3px solid; */
+    box-sizing: border-box;
+  }
+  /* 亮綠 */
+  #container2 {
+    transform: rotate(90deg) translateY(-100vh);
+    transform-origin: top left;
+    height: 100vh;
+    /* !!!改整個內容的寬度!!! */
+    width: 200vw;
+    font-size: 0;
+    /* background-color: #fcf9f9; */
+    /* border: #cfa 3px solid; */
+    box-sizing: border-box;
+    position: absolute;
+    display: flex;
+  }
+  /* 淺紫 */
+  #container2 .box {
+    width: 50vw;
+    height: calc(100vh - 60px);
+    top: 60px;
+    /* border: #bbc 3px solid; */
+    box-sizing: border-box;
+    display: block;
+  }
+
+  /* ################ box 1 ################## */
+  #container2 .one {
+    width: 45vw;
+    display: flex;
+  }
+  .one h1 {
+    top: 15%;
+    left: 10%;
+    writing-mode: vertical-lr;
+  }
+
+  /* ################ box 2 ################## */
+  /* --------------------------------------- */
+  #container2 .two {
+    width: 55vw;
+  }
+  .two > div {
+    margin: 4% 8% 0%;
+    /* border: #6b5ab9 2px solid; */
+  }
+  .two .title {
+    margin: 6% 8% 0%;
+    /* border: #6b5ab9 2px solid; */
+  }
+  .two .p1 {
+    display: flex;
+    /* height: 30%; */
+    /* border: #717a0d 2px solid; */
+  }
+
+  .two .p1 .item1 {
+    width: 43%;
+    box-sizing: border-box;
+    padding-right: 24px;
+    /* border: #df7a37 2px solid; */
+  }
+  .two .p1 .item2 {
+    width: 50%;
+    justify-content: flex-end; /* 子元素（如圖片）靠右對齊 */
+    /* border: #e9d4c7 2px solid; */
+  }
+  .two .p1 img {
+    margin-left: auto;
+    margin-bottom: 4%;
+    display: block;
+    object-fit: contain; /* 圖片會保持比例，不會超出父容器 */
+    height: 22%;
+    /* border: #df3794 2px solid; */
+  }
+
+  /* <!-- ################ box 3  ################## --> */
+  /* -------------------------- */
+  #container2 .three {
+    position: relative;
+    width: 100vw;
+  }
+  .three > div {
+    margin: 5% 8% 0%;
+  }
+  .three .p2 {
+    display: flex;
+    height: 32%;
+    /* border: #57563c 2px solid; */
+  }
+  .three .item1 {
+    width: 32%;
+    padding-right: 24px;
+    /* border: #306fae 2px solid; */
+  }
+  .three .item2 {
+    display: flex;
+    justify-content: flex-end;
+    width: 68%;
+    align-items: center;
+    /* border: #91da6c 2px solid; */
+  }
+  .three img {
+    object-fit: contain; /* 圖片會保持比例，不會超出父容器 */
+    height: 100%;
+    /* border: #fa8a5a 2px solid; */
+  }
+  .three .item2 .img1 {
+    margin-right: 3%;
+  }
+
+  /* GAME##################### */
+  .game h1 {
+    /* margin-top: -1%; */
+    /* border: #96d600 2px solid; */
+    font-size: 18px;
+    padding-bottom: 8px;
+    color: #f4eeda;
+    text-align: center;
+  }
+  .three .game {
+    /* position: relative; */
+    margin: 2%;
+    height: 55%;
+    /* border: #415317 2px solid; */
+    z-index: 10;
+  }
+  .game-container {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 8px;
+    /* border: #f7a886 2px solid; */
+  }
+
+  .draggable {
+    cursor: grab;
+  }
+
+  .dropzone {
+    border: 1.5px dashed #f4eeda;
+    padding: 8px;
+    width: 200px;
+    height: 70%;
+    position: relative;
+    margin-bottom: 8%;
+  }
+
+  .dropzone img {
+    display: block;
+    margin: 0 auto;
+    height: 80%;
+    object-fit: contain;
+  }
+
+  .box .dropzone p {
+    color: #f4eeda !important;
+    margin: 4px 0px;
+    text-align: center;
+    /* border: #f4eeda 1.5px solid; */
+  }
+
+  #sushi {
+    transition: transform 0.5s ease-in-out;
+  }
+
+  #customer img.happy {
+    animation: happy-eating 1s infinite;
+  }
+
+  .box .brown {
+    position: absolute;
+    margin: 0%;
+    bottom: 0;
+    height: 55%;
+    width: 100%;
+    background-color: #45362E;
+    z-index: 0;
+    /* border: #79b95a 2px solid; */
+  }
+
+  /* 內容排版-------------------------------- */
+}
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+@media screen and (max-width: 1024px) {
+  .one h1 {
+    font-size: 28px;
+  }
+  /* one的小白字----------------------- */
+  #container2 .box .white {
+    font-size: 12px;
+  }
+  #container .box p {
+    font-size: 12px;
+  }
+}
+
+/* 內容排版 手機板!!!!!!!!!!!!!!!!!!!!!! */
+@media screen and (max-width: 767.5px) {
+  #container {
+    /* border: #f9cd1b 3px solid; */
+    background-color: rgb(189, 216, 156);
+  }
+  #container2 {
+    /* border: #79b95a 3px solid; */
+    background-color: rgb(59, 148, 148);
+    /* width: 100%; */
+  }
+  #menu-control {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    /*   z-index:3; */
+  }
+
+  /* <!-- ################手機內容排版共用  ################## --> */
+  .box {
+    display: flex;
+    flex-direction: column; /* 保證子元素是垂直排列的 */
+    align-items: center; /* 讓子元素水平置中 */
+    width: 100%;
+    /* border: #fa8a5a 5px solid; */
+  }
+  .box > div {
+    width: 420px; /* 設置寬度為420px */
+    margin: 4% 0; /* 上下留空距離，水平自動居中 */
+  }
+  .box h3 {
+    text-align: left;
+    margin: -4 0 8 0%;
+  }
+  h1 {
+    font-size: 24px;
+  }
+
+  /* <!-- ################ box 1  ################## --> */
+  .one {
+    height: 280px;
+    z-index: 10;
+    /* border: #b93a3a 3px solid; */
+    text-align: center;
+  }
+  .one img {
+    height: 100%;
+  }
+  .one h1 {
+    font-size: 20px;
+    top: 60%;
+  }
+
+  /* <!-- ################ box 2  ################## --> */
+
+  .title {
+    /* border: #79b95a 2px solid; */
+    text-align: center;
+  }
+
+  .p1 {
+    /* border: #44a4fd 2px solid; */
+    margin: 0 auto;
+  }
+
+  .p1 .item2 {
+    display: flex;
+    /* border: #fd44fd 2px solid; */
+    margin: 5% 0%;
+    width: 100%;
+    /* height: 200px; */
+  }
+  .p1 .item2 img {
+    width: 32%;
+    object-fit: none; /* 保持圖片比例並覆蓋整個div */
+  }
+
+  .item2 .center {
+    padding: 0 8px;
+  }
+
+  /* <!-- ################ box 3  ################## --> */
+  .three .item1 {
+    margin: 10% 0 0 0%;
+  }
+
+  .three .item2 {
+    display: flex;
+    margin: 5% 0%;
+    width: 100%;
+    height: 204px;
+    /* border: #fd44fd 2px solid; */
+  }
+
+  .item2 img {
+    height: 100%;
+    /* border: #8c598c 2px solid; */
+  }
+
+  .item2 .vrice {
+    margin-right: 10px;
+  }
+
+  .three .game {
+    width: 100%;
+    background: #45362E;
+    /* border: #fa8a5a 2px solid; */
+  }
+}

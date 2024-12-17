@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Noto Sans JP", serif;
+  letter-spacing: 2px;
+}
+
+.key_container{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+
+    .key_layer{
+        width: 100vw;
+        height: 100vh;
+        background-size: auto 100vh;
+         background-size: cover;
+        background-position: bottom center;
+        position: fixed;
+
+        /* border: rgb(41, 81, 81) 2px solid; */
+        will-change: transform;
+    }
+
+    #parallax1{
+        /* border: rgb(221, 48, 236) 2px solid; */
+    }
+
+    #parallax2{
+        transform: translateX(-100vw);
+        transition: transform 0.3s ease-out;
+        /* border: rgb(236, 208, 48) 2px solid; */
+    }
+    
+}
+
+/* ##############背景圖檔############## */
+#parallax0{
+    background-image: url(../Tourism/webimg/newloadppp/底圖0.png);
+    /* border: #0ee 2px solid; */
+}
+#parallax3{
+    background-image: url(../Tourism/webimg/newloadppp/小實驗瓶.png);
+}
+#parallax4{
+    background-image: url(../Tourism/webimg/newloadppp/中實驗瓶.png);
+}
+#parallax5{
+    background-image: url(../Tourism/webimg/newloadppp/大實驗瓶.png);
+}
+#parallax6{
+    background-image: url(../Tourism/webimg/newloadppp/透明標題.png);
+}
+#finalImage{
+    background-image: url(../Tourism/webimg/newloadppp/角色.png);
+}
+
+.after{
+    background-color: #3c871c;
+    height: 1800px;
+}
+
+.final_image {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url(../Tourism/webimg/newloadppp/大實驗瓶.png); /* 請替換為你的圖片路徑 */
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* 初始透明度為 0 */
+    transition: opacity 1.5s ease-in-out; /* 平滑過渡效果 */
+    pointer-events: none; /* 防止影響點擊事件 */
+}
+
+#finalLink {
+    text-decoration: none; /* 去掉連結的底線 */
+    pointer-events: auto; /* 啟用連結點擊事件 */
+}
+
+@keyframes swing {
+    0% { transform: translate(-50%, 0) rotate(1deg); }
+    /* 50% { transform: rotate(0deg); } */
+    100% { transform: translate(-50%, 0) rotate(-1deg); }
+}
+
+
+.final_button {
+    position: absolute;
+    top:75%;
+    left:50%;
+    background-color: #45362E; 
+    color: #f7f4f2; /* 白色文字 */
+    border: none;
+    padding: 16px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50px;
+    /* box-shadow: 2px 5px rgba(0, 0, 0, 0.1); */
+    transition: all 0.3s ease;
+    animation: swing 0.5s ease-in-out infinite alternate;
+}
+
+
+.final_button:hover {
+    animation: none; 
+    background-color: #BC3e3e;
+    transform: translate(-50%, 0) scale(1.05);/* 滑鼠懸停時微微放大 */
+    
+}
+
+::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Edge */
+  }

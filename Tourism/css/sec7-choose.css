@@ -1,0 +1,235 @@
+.bgimg {
+  position: fixed;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(https://i.pinimg.com/564x/32/6a/0a/326a0a9e1f635935b63bfeda6b8de333.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /*   text-align:center; */
+}
+.bgimg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0.8;
+}
+h5 {
+  width: 312px;
+  font-size: 20px;
+  letter-spacing: 4px;
+  /* border: #79b95a 1px solid; */
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: 20%;
+  color: #f0efe6;
+}
+.set {
+  display: flex;
+  /* border: #79b95a 2px solid; */
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.carousel {
+  padding: 12px 0;
+  display: flex;
+  overflow: hidden;
+  width: 1020px;
+}
+
+.cardtrack {
+  display: flex;
+  /* position: absolute; */
+  transition: transform 0.5s ease-in-out;
+}
+.cardtrack a {
+  padding: 12px;
+  text-decoration: none;
+}
+h4 {
+  position: absolute;
+  top: 240px;
+  letter-spacing: 4px;
+  z-index: 3;
+  color: #45362E;
+}
+
+.item {
+  position: relative;
+  height: 280px;
+  width: 180px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0efe6;
+}
+.item img {
+  position: absolute;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  top: 0px;
+  object-fit: cover;
+  width: 100%;
+  height: 80%;
+}
+
+.item:hover {
+  transition: transform 0.2s ease-in-out;
+  transform: scale(1.1);
+}
+.item:left {
+  transition: transform 0.2s ease-in-out;
+  transform: scale(1);
+}
+.cardtrack:hover .item {
+  transition: transform 0.3s ease-in-out;
+  transform: scale(0.96);
+}
+
+.cardtrack .item:hover {
+  transition: transform 0.2s ease-in-out;
+  transform: scale(1.1);
+}
+.item:hover h4 {
+  top: 240px;
+  font-size: 16px;
+  color: #BC3E1E;
+}
+
+.carousel-button {
+  padding: 8px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+.carousel-button:hover {
+  transition: transform 0.2s ease-in-out;
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 1200px) {
+  .carousel-button {
+    padding: 0px;
+    opacity: 0;
+    cursor: default;
+  }
+  
+}
+
+
+@media screen and (max-width: 1200px) {
+  .carousel {
+    width: 816px;
+  }
+  
+}
+
+@media screen and (max-width: 960px) {
+  .carousel {
+    width: 610.4px;
+  }
+
+  
+
+}
+@media screen and (max-width: 768px) {
+  .carousel {
+    /* overflow: auto; */
+    display: flex;
+    flex-wrap: wrap;
+    width: 457.8px;
+    /* border: #79b95a 1px solid; */
+  }
+  
+  
+
+  .cardtrack {
+    display: flex;
+    flex-wrap: wrap;
+    /* position: absolute; */
+    transition: transform 0.5s ease-in-out;
+  }
+
+  h4 {
+    position: absolute;
+    font-size: 13px;
+    top: 168px;
+    letter-spacing: 2px;
+  }
+
+  .item {
+    height: 200px;
+    width: 128.6px;
+    border-radius: 24px;
+  }
+  .item img {
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+  }
+
+  .item:hover h4 {
+    top: 168px;
+    font-size: 13px;
+  }
+
+  .carousel-button {
+    opacity: 0;
+    cursor: default;
+  }
+}
+@media screen and (max-width: 556px) {
+  .carousel {
+    /* overflow: auto; */
+    display: flex;
+    flex-wrap: wrap;
+    width: 305.2px;
+    /* border: #79b95a 1px solid; */
+  }
+
+  .cardtrack {
+    display: flex;
+    flex-wrap: wrap;
+    /* position: absolute; */
+    transition: transform 0.5s ease-in-out;
+  }
+
+  h4 {
+    position: absolute;
+    font-size: 13px;
+    top: 168px;
+    letter-spacing: 2px;
+  }
+
+  .item {
+    height: 200px;
+    width: 128.6px;
+    border-radius: 24px;
+  }
+  .item img {
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+  }
+
+  .item:hover h4 {
+    top: 168px;
+    font-size: 13px;
+  }
+
+  .carousel-button {
+    padding: 0px;
+    opacity: 0;
+    cursor: default;
+  }
+}

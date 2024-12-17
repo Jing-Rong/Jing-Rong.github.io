@@ -1,0 +1,210 @@
+/* 不管大小全部共用的元件!!!!!!!!!!!!!!!!!!!!!!!! */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Noto Sans JP", serif;
+  /* font: normal 100% Helvetica; */
+}
+
+/* 滾動條樣式################################## */
+/* 整個滾動條 */
+::-webkit-scrollbar {
+  width: 4px; /* 滾動條的寬度 */
+  height: 4px; /* 滾動條的高度 */
+}
+
+/* 滾動條的背景 */
+::-webkit-scrollbar-track {
+  background: rgba(69, 54, 46, 1);
+  /* border-radius: 50px;  */
+  /* 圆角 */
+}
+
+/* 滾動條的滑塊 */
+::-webkit-scrollbar-thumb {
+  background: #BC3E1E; /* 滑塊顏色 */
+  border-radius: 50px; /* 圆角 */
+}
+
+/* 滑塊在懸停時的顏色 */
+::-webkit-scrollbar-thumb:hover {
+  background: #b9cdcd; /* 懸停時的顏色 */
+}
+
+/* 滾動條的邊距 */
+::-webkit-scrollbar-corner {
+  background: #f1f1f1; /* 角落的顏色 */
+}
+
+/* navbar --------------------------- */
+.header {
+  padding: 0px;
+  background-color: #FCF9F9;
+  width: 100%;
+  height: 60px;
+  /*   display:flex; */
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 50;
+}
+.logo {
+  /* border: #79b95a 2px solid; */
+  padding:8px 4px;
+}
+.logo img {
+  height: 110%;
+}
+nav a {
+  display: block;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 14px;
+}
+nav .g:hover {
+  background-color:#BC3E1E;
+  color: #FCF9F9;
+}
+nav .o:hover {
+  background-color: #79b95a;
+  color: #FCF9F9
+}
+
+/* 跑馬燈---------------------------------- */
+.light {
+  display: flex;
+  z-index: 5;
+  position: fixed;
+  top: 60px;
+  width: 100%;
+  height: 40px;
+  background-color: rgba(60, 135, 28, 0.8);
+  overflow: hidden;
+  z-index: 50;
+}
+.light p {
+  color: #FCF9F9;
+  letter-spacing: 2.4px;
+  font-size: 12px;
+  padding: 8px;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  white-space: nowrap;
+  display: inline;
+  /*   display:inline-block; */
+  /*   margin:0 5px 0 0; */
+}
+.light img {
+  display: inline;
+  position: relative;
+  top: 4;
+  padding: 0 4px;
+  vertical-align: top;
+  z-index: 2;
+}
+.light .m {
+  /*   text-overflow: ellipsis; */
+  animation: marquee 8s linear infinite;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* ######################電腦版導覽列####################### */
+@media screen and (min-width: 768px) {
+  .menu-btn {
+    display: none;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  nav {
+    /*     margin:-10px 0; */
+    position: relative;
+    left: 0;
+    display: flex;
+    height: auto;
+    width: auto;
+    padding: 0 40px;
+  }
+  nav a {
+    padding: 0px 16px;
+    color: #45362E;
+    line-height: 60px;
+  }
+}
+/* ######################手機版導覽列####################### */
+@media screen and (max-width: 767.5px) {
+  #menu-control {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    /*   z-index:3; */
+  }
+  nav {
+    box-sizing: border-box;
+    width: 200px;
+    height: calc(100vh - 40px);
+    background-color: #FCF9F9;
+    position: absolute;
+    top: 60px;
+    right: -100%;
+    padding: 40px 0px;
+    transition: 0.5s;
+    opacity: 95%;
+  }
+  nav a {
+    line-height: 3.2;
+    padding: 0px 40px;
+    color: #3c4040;
+    /*     border-bottom: #79B95A 2px solid; */
+  }
+  .logo img {
+    height: 80%;
+  }
+  .menu-btn {
+    /*   background-color: #0f0; */
+    width: 30px;
+    height: 30px;
+    margin: 0px 15px;
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  /* 漢堡橫條 偽元素 */
+  .menu-btn::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background-color: #3c4040;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    box-shadow: 5px 10px 0px #000;
+  }
+  .menu-btn span {
+    display: block;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+  }
+  /* 按鈕控制 */
+  #menu-control:checked ~ .header nav {
+    right: 0;
+  }
+}
